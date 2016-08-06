@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dating Website</title>
+
+</head>
+<body>
+<fieldset>
+
+<label>Your profile picture</label>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+</form>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <label>Name</label>
+    <input type="text" name="name" placeholder="Name">
+
+    <label>Gender</label>
+    <input type="radio" value="Boy" name="gender"> Male <br>
+    <input type="radio" value="Girl" name="gender"> Girl <br>
+    <input type="radio" value="Other" name="gender"> Other <br>
+
+    <label>Age</label><input type="text" name="age" placeholder="Age">
+    <label> Birthday</label>
+    <input type="date">
+    <br>
+    <label>Favorite Color</label>
+    <input type="color">
+    <label>Country</label>
+    <input type="text">
+</fieldset>
+
+<br>
+
+<fieldset>
+    <label>Short</label>
+    <input type="range" >
+    <label> Tall</label>
+
+    <br>
+
+    <label> Serious</label>
+    <input type="range">
+    <label> Funny</label>
+
+    <br>
+
+    <label>Cat</label>
+    <input type="range">
+    <label>Dog</label>
+</fieldset>
+
+<br>
+
+<fieldset>
+
+    <label>Email</label>
+    <input type="text">
+
+    <br>
+
+    <label>Mobile</label>
+    <input type="text">
+
+    <br>
+    <br>
+    <label>Address</label>
+    <br>
+    <textarea rows="4" cols="25"></textarea>
+
+    <br>
+
+<label>Method of contact</label><br>
+    <input type="radio" value="Boy" name="gender"> Phone
+    <input type="radio" value="Girl" name="gender"> Email
+
+</fieldset>
+
+<input type="submit">
+</body>
+</html>
