@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Dating Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <!-- Zeus -->
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 </head>
 <body>
 <fieldset>
@@ -11,7 +20,9 @@
 <label>Your profile picture</label>
 <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    <!-- <input type="file" name="fileToUpload" id="fileToUpload"> -->
+    <input type='file' onchange="readURL(this);" />
+  <!-- <img id="blah" src="#" alt="your image" /> -->
 </form>
 </fieldset>
 
@@ -19,9 +30,9 @@
 
 <fieldset>
     <label>Name</label>
-    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="name" placeholder="Name"> <br>
 
-    <label>Gender</label>
+    <label>Gender</label> <br>
     <input type="radio" value="Boy" name="gender"> Male <br>
     <input type="radio" value="Girl" name="gender"> Girl <br>
     <input type="radio" value="Other" name="gender"> Other <br>
@@ -39,20 +50,17 @@
 <br>
 
 <fieldset>
-    <label>Short</label>
-    <input type="range" >
-    <label> Tall</label>
+    <label>Short<input type="range"> </label>
+    <label>Tall</label>
 
     <br>
 
-    <label> Serious</label>
-    <input type="range">
+    <label> Serious<input type="range"></label>
     <label> Funny</label>
 
     <br>
 
-    <label>Cat</label>
-    <input type="range">
+    <label>Cat<input type="range"></label>
     <label>Dog</label>
 </fieldset>
 
@@ -82,6 +90,27 @@
 
 </fieldset>
 
-<input type="submit">
+<input id ="submit" type="submit">
+
+<div id ="blah2">
+<img id="blah" src="#" alt="your image" />
+<h1 id= "popUp">It's you!</h1>
+</div>
+
+<script type="text/javascript">
+function readURL(input) {
+     if (input.files && input.files[0]) {
+         var reader = new FileReader();
+         reader.onload = function (e) {
+             $('#blah')
+                 .attr('src', e.target.result)
+                 .width(500)
+                 .height(500);
+         };
+         reader.readAsDataURL(input.files[0]);
+         document.getElementById('popUp').style.display = 'block';
+     }
+ }
+</script>
 </body>
 </html>
